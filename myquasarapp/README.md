@@ -1,6 +1,6 @@
-# UP Quasar App (myquasarapp)
+# Quasar App (myquasarapp)
 
-Nice description
+A Quasar Framework app
 
 ## Install the dependencies
 ```bash
@@ -12,10 +12,6 @@ yarn
 quasar dev
 ```
 
-### Lint the files
-```bash
-yarn run lint
-```
 
 ### Build the app for production
 ```bash

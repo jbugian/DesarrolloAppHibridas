@@ -94,10 +94,10 @@
 export default {
   name: 'MyLayout',
 
-  data() {
+  data () {
     return {
-      leftDrawerOpen: false,
-    };
-  },
-};
+      leftDrawerOpen: false
+    }
+  }
+}
 </script>
