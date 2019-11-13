@@ -2,6 +2,7 @@
 const routes = [
   {
     path: '/',
+    redirect: '/index',
     component: () => import('layouts/MyLayout.vue'),
     children: [
       { path: '/login', component: () => import('components/login/Login.vue'), meta: {  } },
