@@ -5,12 +5,9 @@
   >
     <div class="column q-pa-lg">
       <div class="row">
-        <q-card square class="shadow-24" style="width:300px;height:485px;">
+        <q-card square class="shadow-24" style="width:600px;height:850px;">
           <q-card-section class="bg-deep-purple-7">
             <h4 class="text-h5 text-white q-my-md">Registration</h4>
-            <div class="absolute-bottom-right q-pr-md" style="transform: translateY(50%);">
-              <q-btn fab icon="close" color="purple-4" />
-            </div>
           </q-card-section>
           <q-card-section>
             <q-form class="q-px-sm q-pt-xl q-pb-lg">
@@ -24,6 +21,7 @@
                   <q-icon name="person" />
                 </template>
               </q-input>
+              <q-date v-model="birthdate" minimal />
               <q-input square clearable v-model="password" type="password" label="Password">
                 <template v-slot:prepend>
                   <q-icon name="lock" />
@@ -69,23 +67,29 @@ export default {
       email: "",
       username: "",
       password: "",
-      password2: ""
+      password2: "",
+      birthdate: ""
     };
   },
   methods: {
     register: function() {
       if (this.password === this.password2 && this.password.length > 0) {
-        let users = JSON.parse(localStorage.getItem("users"))
-        let userExists = users.find(u => u.user == this.email)
+        let users = JSON.parse(localStorage.getItem("users"));
+        let userExists = users.find(u => u.user == this.email);
 
-        if(userExists !== undefined) {
-            return alert("user already exists")
+        if (userExists !== undefined) {
+          return alert("user already exists");
         }
 
-        users.push({user: this.email, password: this.password, nick: this.username})
-        localStorage.setItem('users', JSON.stringify(users))
+        users.push({
+          email: this.email,
+          password: this.password,
+          username: this.username,
+          birthdate: this.birthdate
+        });
+        localStorage.setItem("users", JSON.stringify(users));
 
-            this.$router.push("/login");
+        this.$router.push("/login");
       } else {
         this.password = "";
         this.password2 = "";

@@ -21,7 +21,7 @@ export default function (/* { ssrContext } */) {
     strict: process.env.DEV
   })
 
-  localStorage.setItem('users', JSON.stringify([{ user: "123", password: "123", nick: "123" }]))
+  localStorage.setItem('users', JSON.stringify([{ email: "123", password: "123", username: "123", birthdate: "2019/11/22" }]))
 
   return Store
 }
