@@ -55,9 +55,9 @@ export default {
     login: function() {
       let email = this.email;
       let password = this.password;
-      let user = JSON.parse(localStorage.getItem("users")).find(u => u.email == email && u.password == password);
+      let user = this.$store.getters.getUsers.find(u => u.email == email && u.password == password);
       if (user !== undefined) {
-        localStorage.setItem("user", JSON.stringify(user))
+        this.$store.commit("loggedUser", user)
         this.$router.push("/index");
       }
     }

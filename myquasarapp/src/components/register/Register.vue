@@ -74,20 +74,19 @@ export default {
   methods: {
     register: function() {
       if (this.password === this.password2 && this.password.length > 0) {
-        let users = JSON.parse(localStorage.getItem("users"));
+        let users = this.$store.getters.getUsers;
         let userExists = users.find(u => u.user == this.email);
 
         if (userExists !== undefined) {
           return alert("user already exists");
         }
 
-        users.push({
+        this.$store.commit("addUser", {
           email: this.email,
           password: this.password,
           username: this.username,
           birthdate: this.birthdate
         });
-        localStorage.setItem("users", JSON.stringify(users));
 
         this.$router.push("/login");
       } else {
