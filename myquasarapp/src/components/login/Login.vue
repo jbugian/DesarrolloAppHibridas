@@ -34,7 +34,6 @@
             />
           </q-card-actions>
           <q-card-section class="text-center q-pa-sm">
-            <p class="text-grey-6">Forgot your password?</p>
           </q-card-section>
         </q-card>
       </div>

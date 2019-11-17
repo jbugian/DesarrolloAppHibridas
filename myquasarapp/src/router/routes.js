@@ -9,7 +9,8 @@ const routes = [
       { path: '/register', component: () => import('components/register/Register.vue'), meta: { } },
       { path: '/index', component: () => import('pages/Index.vue'), meta: { requiresAuth: true } },
       { path: '/games', component: () => import('components/games/Games.vue'), meta: { requiresAuth: true } },
-      { path: '/addGame', component: () => import('components/games/AddGame.vue'), meta: { requiresAuth: true } }
+      { path: '/addGame', component: () => import('components/games/AddGame.vue'), meta: { requiresAuth: true } },
+      { path: '/users', component: () => import('components/users/Users.vue'), meta: { requiresAuth: true } }
     ]
   }
 ]
