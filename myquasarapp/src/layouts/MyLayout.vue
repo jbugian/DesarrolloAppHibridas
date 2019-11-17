@@ -54,6 +54,15 @@
             <q-item-label caption>Add game</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable to="/Games">
+          <q-item-section avatar>
+            <q-icon name="public" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Games</q-item-label>
+            <q-item-label caption>Games</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 

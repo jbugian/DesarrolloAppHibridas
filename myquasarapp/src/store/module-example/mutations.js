@@ -5,3 +5,7 @@ export function addUser (state, user) {
 export function loggedUser (state, user) {
     state.user = user
 }
+
+export function addGame (state, game) {
+    state.games.push(game)
+}

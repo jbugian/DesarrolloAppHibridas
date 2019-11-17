@@ -56,15 +56,14 @@ export default {
   },
   methods: {
     addGame: function() {
-      let games = JSON.parse(localStorage.getItem("games"));
+      let games = this.$store.getters.getGames;
       if (games.find(g => g.name == this.name) === undefined) {
-        games.push({
+        this.$store.commit("addGame" , {
             name: this.name,
             tags: this.tags,
             esrb: this.esrb
         })
-        localStorage.setItem("games", JSON.stringify(games))
-        this.$router.push("/games");
+        this.$router.push("/Games");
       }
       else {
         alert("the game already exists")
