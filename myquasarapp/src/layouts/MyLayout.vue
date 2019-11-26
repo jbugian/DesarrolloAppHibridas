@@ -11,7 +11,7 @@
           aria-label="Menu"
         />
 
-        <q-toolbar-title>Quasar App</q-toolbar-title>
+        <q-toolbar-title>Tinder Gamer</q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
@@ -22,7 +22,7 @@
         <q-item-label header>Menu</q-item-label>
         <q-item clickable to="/Index">
           <q-item-section avatar>
-            <q-icon name="school" />
+            <q-icon name="games" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Index</q-item-label>
@@ -31,7 +31,7 @@
         </q-item>
         <q-item clickable to="/Register">
           <q-item-section avatar>
-            <q-icon name="public" />
+            <q-icon name="book" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Register</q-item-label>
@@ -40,7 +40,7 @@
         </q-item>
         <q-item clickable to="/Users">
           <q-item-section avatar>
-            <q-icon name="public" />
+            <q-icon name="face" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Users</q-item-label>
@@ -49,7 +49,7 @@
         </q-item>
         <q-item clickable to="/AddGame">
           <q-item-section avatar>
-            <q-icon name="public" />
+            <q-icon name="shopping_cart" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Add game</q-item-label>
@@ -58,7 +58,7 @@
         </q-item>
         <q-item clickable to="/Games">
           <q-item-section avatar>
-            <q-icon name="public" />
+            <q-icon name="games" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Games</q-item-label>
@@ -67,7 +67,7 @@
         </q-item>
         <q-item clickable v-on:click="logout">
           <q-item-section avatar>
-            <q-icon name="public" />
+            <q-icon name="highlight_off" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Logout</q-item-label>

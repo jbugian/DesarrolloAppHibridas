@@ -1,5 +1,18 @@
-<template>
-  <q-table title="Games" :data="tableData" :columns="columns" row-key="name" />
+<template >
+    <div class="q-pa-md">
+      <q-table
+        title="Juegos"
+        :data="tableData"
+        :columns="columns"
+        row-key="name"
+        :selected-rows-label="getSelectedString"
+        selection="multiple"
+        :selected.sync="selected" />
+
+    <div class="q-mt-md">
+      Selected: {{ JSON.stringify(selected) }}
+    </div>
+  </div>  
 </template>
 
 <script>
@@ -10,7 +23,7 @@ export default {
         {
           name: "Name",
           required: true,
-          label: "",
+          label: "Nombre",
           align: "left",
           field: "name",
           sortable: true,
@@ -20,7 +33,7 @@ export default {
         {
           name: "Tags",
           required: true,
-          label: "",
+          label: "Tags",
           align: "left",
           field: "tags",
           sortable: true,
@@ -30,7 +43,7 @@ export default {
         {
           name: "ESRB",
           required: true,
-          label: "",
+          label: "ESRB",
           align: "left",
           field: "esrb",
           sortable: true,
@@ -40,6 +53,11 @@ export default {
       ],
       tableData: this.$store.getters.getGames
     };
+  },
+  methods: {
+    getSelectedString () {
+      return this.selected.length === 0 ? '' : `${this.selected.length} record${this.selected.length > 1 ? 's' : ''} selected of ${this.data.length}`
+    }
   }
 };
 </script>
